@@ -1,0 +1,14 @@
+track-finances-db:
+  image: postgres:9.5.10
+  environment:
+    POSTGRES_DB: track-finances
+    POSTGRES_USER: track-finances
+    POSTGRES_PASSWORD: qwerty
+  ports:
+    - "5432:5432"
+  expose:
+    - "5432"
+  volumes:
+    - ./postgresql-seed/docker-entrypoint-initdb.d/:/docker-entrypoint-initdb.d
+
+
